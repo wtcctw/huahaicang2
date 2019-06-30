@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "huahaicang",
+  "description": "huahaicang",
+  "version": "2.2",
+  "permissions": [
+    "tabs", 
+    "management",
+    "webNavigation",
+    "http://*.huahaicang.cn/*", 
+    "https://*.huahaicang.cn/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://www.huahaicang.cn/*", "https://www.huahaicang.cn/*"], 
+      "js": ["huahaicang.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "huahaicang",
+    "default_icon": "images/offline.png"
+  }
+}
